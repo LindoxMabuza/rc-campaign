@@ -1,0 +1,51 @@
+<%- include('partials/header') -%>
+<div class="container m-auto p-10 h-screen">
+  <div class="flex flex-col items-center">
+      <div class="flex flex-row-reverse align items-start justify-center gap-10 w-full max-w-2xl">
+          <!-- <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div> -->
+          <div class="mt-5 flex flex-col gap-5">
+            <h1 class="mt-5">Add a post</h1>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST" class="flex flex-col gap-2">
+              
+              <div>
+                <select class="select text-slate-400 select-info w-full max-w-xs" name="category">
+                  <option disabled selected>Select category</option>
+                  <option value="laptops">Laptops/Computers</option>
+                  <option value="Phones">Phones</option>
+                  <option value="Appliances">Home Appliances</option>
+                  <option value="Other">Pheripherals, Speakers, Headsets, etc</option>
+                </select>
+              </div>
+             <div class="max-w-[50rem]">
+              <textarea id="description" type="text" placeholder="A brief description of your ask..." class="textarea textarea-info w-full max-w-xs" name="description"></textarea>
+              
+             </div>
+              
+              <div class="mb-3 flex flex-col">
+                <label for="imgUpload" class="form-label">Upload image (optional)</label>
+                <input type="file" class="input-bordered input-info w-full max-w-xs" id="imageUpload" name="file">
+              </div>
+              <button type="submit" class="btn btn-primary w-full max-w-xs" value="Upload">Submit</button>
+            </form>
+            <button class="btn btn-outline btn-info w-full max-w-xs" href="/feed">Return to Feed</button>
+          </div>
+      </div>
+      
+          
+         
+      </div>  
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.19.1/ckeditor.js" integrity="sha512-Ooi9IbjM2SIDjQ02ENbPFuuORT8F8Rc+rowcYfLneDwKRxw1+gVVj5tciVmV/APnA/Ys+qy1MbNKK3k2EaAHcw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  CKEDITOR.replace('description', {
+    plugins: 'wysiwygarea, toolbar, basicstyles, link'
+  })
+</script>
+
+<%- include('partials/footer') -%>

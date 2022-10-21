@@ -1,0 +1,158 @@
+<%- include('partials/header', {title:''}) -%>
+<div class="container flex flex-col mt-12 max-w-[50rem]">
+  <div class="flex justify-between mt-5 pr-5 pl-5">
+    <div class="flex gap-1 items-center">
+      <h5 class="card-title text-sm">
+        from <%= users.find(e => e._id ==
+        String(post.user)).userName.toUpperCase() %>, on
+        <span><%= String(post.createdAt).slice(0, 10) %></span>:
+      </h5>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <div
+      class="card bg-base-100 shadow-l rounded-sm items-center flex flex-col"
+    >
+      <div class="card-body">
+        <div class="card-actions justify-start">
+          <div class="badge badge-outline"><%= post.category %></div>
+        </div>
+        <p><%- post.description %></p>
+        <!-- <figure class="max-w-[40rem]">
+          <img src="<%= post.image%>" alt="Movie" />
+        </figure> -->
+        <!-- The button to open modal -->
+        <label
+          for="my-modal-4"
+          class="btn modal-button h-auto flex justify-left max-w-[10rem]"
+          ><figure class="max-w-[10rem]">
+            <img src="<%= post.image%>" alt="Movie" /></figure
+        ></label>
+      </div>
+
+      <!-- Put this part before </body> tag -->
+      <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+      <label for="my-modal-4" class="modal cursor-pointer h-auto w-auto">
+        <label class="modal-box relative" for="">
+          <figure class="max-w-[40rem]">
+            <img src="<%= post.image%>" alt="Movie" />
+          </figure>
+        </label>
+      </label>
+      <div class="flex justify-between gap-4">
+        <div class="flex items-center">
+          <form
+            class="col-1"
+            action="/post/likePost/<%= post.id %>?_method=PUT"
+            method="POST"
+          >
+            <button class="btn btn-ghost fa fa-heart" type="submit"></button>
+          </form>
+          <h5><%= post.likes %></h5>
+        </div>
+        <div class="flex items-center">
+          <form
+            class="col-1"
+            action="/post/likePost/<%= post.id %>?_method=PUT"
+            method="POST"
+          >
+            <button class="btn btn-ghost fa fa-comment" type="submit"></button>
+          </form>
+          <h5><%= post.likes %></h5>
+        </div>
+        <div class="flex gap-2 items-center">
+          <form
+            class="col-1"
+            action="/post/likePost/<%= post.id %>?_method=PUT"
+            method="POST"
+          >
+            <button class="btn btn-ghost fa fa-share" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-6">
+      <h2><%= post.title %></h2>
+
+      <p><%= post.caption %></p>
+
+      <img class="img-fluid" src="<%= post.image%>" />
+      <div class="row justify-content-between">
+        <form
+          class="col-1"
+          action="/post/likePost/<%= post.id %>?_method=PUT"
+          method="POST"
+        >
+          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+        </form>
+        <span class="col-3"><h5><%= post.likes %></h5></span>
+        <%if(user){%>
+        <%if(post.user == user.id){ %>
+        <form
+          action="/post/deletePost/<%= post.id %>?_method=DELETE"
+          method="POST"
+          class="col-3"
+        >
+          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+        </form>
+        <%}%>
+        <%}%>
+      </div>
+    </div> -->
+
+    <div class="m-5">
+      <h2>Add a comment</h2>
+      <form action="/comment/createComment/<%= post.id %>" method="POST">
+        <div class="mb-3">
+          <!-- <label for="comment" class="form-label">Comment</label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="comment"
+            name="comment"
+          ></textarea> -->
+          <textarea
+            id="comment-editor"
+            type="text"
+            placeholder="Submit comment, suggestion, query..."
+            class="input input-bordered input-info w-full mt-3"
+            name="comment"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full" value="Upload">
+          Submit
+        </button>
+      </form>
+    </div>
+    <div class="mt-5">
+      <ul>
+        <% comments.forEach(comment =>{%>
+        <li style="list-style: none">
+          <h6>
+            <%= users.find(e => e._id == String(comment.user)).userName %>
+            <span>says:</span>
+          </h6>
+          <div id="old-comment" style=""><%- comment.comment %></div>
+        </li>
+        <hr />
+
+        <%}) %>
+      </ul>
+    </div>
+    <div class="text-sm mt-5">
+      <a class="btn btn-outline btn-info" href="/profile">Return to Profile</a>
+      <a class="btn btn-outline btn-info" href="/">Return to Feed</a>
+    </div>
+  </div>
+</div>
+<script defer>
+  ClassicEditor.create(document.querySelector("#comment-editor")).catch(
+    (error) => {
+      console.error(error);
+    }
+  );
+</script>
+
+<%- include('partials/footer') -%>
