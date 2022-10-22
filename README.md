@@ -1,5 +1,5 @@
-# Ivenask - Ask A Techie
-Do you have any tech queries? I may have some answers...
+# mPower - Activist Campaign Builder
+
 
 <<<<<<< HEAD
 # Install
