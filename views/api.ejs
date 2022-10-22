@@ -1,0 +1,24 @@
+<%- include('partials/header', {user: user, title:null}) -%>
+
+<main class="container p-5 mt-20 h-screen">
+  <h1 class="font-bold text-lg">API Documentation</h1>
+  <div class="mt-5">
+    <a href="/api/auth"
+      ><h3 class="text-lg">Authentication <span class="fa fa-link"></span></h3
+    ></a>
+    <a href="/api/quickstart"
+      ><h3 class="mt-2 text-lg">
+        Quickstart guide <span class="fa fa-link"></span></h3
+    ></a>
+    <a href="/api/endpoints"
+      ><h3 class="mt-2 text-lg">
+        Endpoint definitions <span class="fa fa-link"></span></h3
+    ></a>
+    <a href="/api/examples"
+      ><h3 class="mt-2 text-lg">
+        Example responses <span class="fa fa-link"></span></h3
+    ></a>
+  </div>
+</main>
+
+<%- include('partials/footer') -%>

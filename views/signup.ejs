@@ -8,59 +8,59 @@
       messages.info.forEach( el => { %>
       <div class=""><%= el.msg %></div>
       <% }) %> <% } %>
-      <div class="text-2xl">Sign up to IvenAsk!</div>
+      <div class="text-2xl text-black text-semibold">Welcome to mPower</div>
       <form action="/signup" method="POST" class="mt-5">
         <div class="mb-3">
-          <label for="userName" class="form-label">User Name</label>
+          <label for="userName" class="form-label text-black">User Name</label>
           <input
             type="text"
-            class="input input-bordered input-info w-full"
+            class="input input-bordered input-info w-full bg-slate-400"
             id="userName"
             name="userName"
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
+          <label for="exampleInputEmail1" class="form-label text-black"
             >Email address (Use a burner email if necessary)</label
           >
           <input
             type="email"
-            class="input input-bordered input-info w-full"
+            class="input input-bordered input-info w-full bg-slate-400"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
           />
-          <div id="emailHelp" class="form-text">
+          <div id="emailHelp" class="form-text text-black">
             (We'll never share your email with anyone else.)
           </div>
         </div>
         <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
+          <label for="password" class="form-label text-black">Password</label>
           <input
             type="password"
-            class="input input-bordered input-info w-full"
+            class="input input-bordered input-info w-full bg-slate-400"
             id="password"
             name="password"
           />
         </div>
         <div class="mb-3">
-          <label for="confirmPassword" class="form-label"
+          <label for="confirmPassword" class="form-label text-black"
             >Confirm Password</label
           >
           <input
             type="password"
-            class="input input-bordered input-info w-full"
+            class="input input-bordered input-info w-full bg-slate-400"
             id="confirmPassword"
             name="confirmPassword"
           />
         </div>
-        <button type="submit" class="btn btn-active btn-accent w-full">
+        <button type="submit" class="btn btn-active btn-slate-900 w-full">
           LOGIN
         </button>
       </form>
-      <div class="mt-2">
+      <div class="mt-2 text-black">
         Already have an account?
-        <span class="underline text-[#198f85]"><a href="/login">Login</a></span>
+        <span class="underline text-slate-900"><a href="/login">Login</a></span>
       </div>
     </section>
   </div>

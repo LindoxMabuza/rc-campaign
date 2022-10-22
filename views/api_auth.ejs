@@ -1,0 +1,30 @@
+<%- include('partials/header', {user: user, title:null}) -%>
+
+<main class="container p-5 mt-20 h-screen">
+  <h1 class="font-bold text-lg">API Documentation</h1>
+  <div class="mt-5">
+    <a href="/api/auth"
+      ><h3 class="text-lg">Authentication <span class="fa fa-link"></span></h3
+    ></a>
+    <form
+      class="mt-5 flex flex-col gap-2"
+      action="/api/auth/create_auth"
+      method="post"
+    >
+      <input
+        type="text"
+        name="email"
+        placeholder="Type here"
+        class="input input-bordered w-full max-w-xs"
+      />
+      <button class="btn btn-outline w-full max-w-xs">generate token</button>
+    </form>
+    <% if(email.length){%>
+    <h2>Use the following information for your API calls:</h2>
+    <h2>Email: <%=email%></h2>
+    <h2>Token: <%=token%></h2>
+    <%}%>
+  </div>
+</main>
+
+<%- include('partials/footer') -%>

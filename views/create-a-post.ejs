@@ -8,30 +8,86 @@
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div> -->
           <div class="mt-5 flex flex-col gap-5">
-            <h1 class="mt-5">Add a post</h1>
+            <h1 class="mt-5  text-center text-black text-semibold text-[32px]">BUILD A CAMPAIGN </h1>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST" class="flex flex-col gap-2">
               
               <div>
-                <select class="select text-slate-400 select-info w-full max-w-xs" name="category">
+                <select class="select text-[#f1f5f9] select-info w-full max-w-xs" name="category">
                   <option disabled selected>Select category</option>
-                  <option value="laptops">Laptops/Computers</option>
-                  <option value="Phones">Phones</option>
-                  <option value="Appliances">Home Appliances</option>
-                  <option value="Other">Pheripherals, Speakers, Headsets, etc</option>
+                  <option value="Fund Raiser">Fund Raiser</option>
+                  <option value="Community Outreach">Community Outreach</option>
+                  <option value="Community Engagements">Community Engagements</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
-             <div class="max-w-[50rem]">
-              <textarea id="description" type="text" placeholder="A brief description of your ask..." class="textarea textarea-info w-full max-w-xs" name="description"></textarea>
-              
-             </div>
-              
+              <div class="w-full space-y-1">
+                <label for="basic" class="text-xs font-medium text-slate-900"> Description of Campaign: </label>
+                <textarea
+                name="description"
+                  rows="4"
+                  id=""
+                  placeholder="Write your description here"
+                  class="block w-full rounded-md border-gray-200 text-sm transition focus:border-blue-600 focus:ring-blue-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75"></textarea>
+              </div>
               <div class="mb-3 flex flex-col">
                 <label for="imgUpload" class="form-label">Upload image (optional)</label>
                 <input type="file" class="input-bordered input-info w-full max-w-xs" id="imageUpload" name="file">
               </div>
-              <button type="submit" class="btn btn-primary w-full max-w-xs" value="Upload">Submit</button>
+              
+              <div class="mb-3 flex flex-col">
+                <!-- <label
+  class="flex w-full cursor-pointer appearance-none justify-center rounded-md border border-dashed border-gray-300 bg-white px-3 py-6 text-sm transition hover:border-gray-400 focus:border-solid focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75"
+  tabindex="0">
+  <span for="photo-dropbox" class="flex items-center space-x-2">
+    <svg class="h-6 w-6 stroke-gray-400" viewBox="0 0 256 256">
+      <path
+        d="M96,208H72A56,56,0,0,1,72,96a57.5,57.5,0,0,1,13.9,1.7"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="24"></path>
+      <path
+        d="M80,128a80,80,0,1,1,144,48"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="24"></path>
+      <polyline
+        points="118.1 161.9 152 128 185.9 161.9"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="24"></polyline>
+      <line
+        x1="152"
+        y1="208"
+        x2="152"
+        y2="128"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="24"></line>
+    </svg>
+    <span class="text-xs font-medium text-slate-600">
+      Drop files to Attach, or
+      <span class="text-blue-600 underline">browse</span>
+    </span>
+  </span>
+  <input id="photo-dropbox" type="file" class="sr-only" name="image" />
+</label> -->
+              </div>
+              <!-- <div class="mb-1 flex items-center justify-between text-xs font-medium text-slate-900">
+                <span>R 0</span>
+                <span>R100 000</span>
+              </div> -->
+              <input
+                type="range"
+                class="h-2 w-full cursor-ew-resize appearance-none rounded-full bg-gray-200 disabled:cursor-not-allowed"
+                min=" 0"
+                max="100000" />
+              <button type="submit" class="btn btn-outline btn-[#0f172a] bg-slate-900 w-full max-w-xs" value="Upload">Submit</button>
             </form>
-            <button class="btn btn-outline btn-info w-full max-w-xs" href="/feed">Return to Feed</button>
+            <button class="btn btn-outline btn-[#0f172a] bg-slate-900 w-full max-w-xs" href="/feed">Return to Feed</button>
           </div>
       </div>
       
@@ -41,7 +97,7 @@
     </div>
   </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.19.1/ckeditor.js" integrity="sha512-Ooi9IbjM2SIDjQ02ENbPFuuORT8F8Rc+rowcYfLneDwKRxw1+gVVj5tciVmV/APnA/Ys+qy1MbNKK3k2EaAHcw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.19.1/ckeditor.js" integrity="sha512-Ooi9IbjM2SIDjQ02ENbPFuuORT8F8Rc+rowcYfLneDwKRxw1+gVVj5tciVmV/APnA/Ys+qy1MbNKK3k2EaAHcw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <script>
   CKEDITOR.replace('description', {
     plugins: 'wysiwygarea, toolbar, basicstyles, link'

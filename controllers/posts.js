@@ -52,11 +52,10 @@ module.exports = {
         image: result.secure_url,
         cloudinaryId: result.public_id,
         description: req.body.description,
-        likes: 0,
         user: req.user.id,
       });
       console.log("Post has been added!");
-      res.redirect("/");
+      res.redirect("/explore");
     } catch (err) {
       console.log(err);
     }

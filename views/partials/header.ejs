@@ -54,13 +54,15 @@
       }
     </script>
   </head>
-  <body class="bg-[#20252f] flex justify-center">
+  <body class="bg-[#115e59] flex justify-center">
     <!-- <header class="container"> -->
     <!-- <div class="text-center">
         <h1 class=""><a href="/profile">Binary Upload Boom</a></h1>
         <span>The #100Devs Social Network</span>
       </div> -->
-    <div class="navbar bg-base-100 text-white fixed top-0 left-0 z-50">
+    <div
+      class="navbar bg-gradient-to-b from-[#115e59] to-[#111827] text-white fixed top-0 left-0 z-50"
+    >
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost btn-circle">
@@ -81,16 +83,20 @@
           </label>
           <ul
             tabindex="0"
-            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow-xl bg-[#115e59] rounded-box w-52"
           >
             <li><a>Home</a></li>
             <li><a href="/profile">Profile</a></li>
-            <li><a>Report</a></li>
+            <li><a href="/api">API</a></li>
           </ul>
         </div>
       </div>
       <div class="navbar-center">
-        <a href="/" class="btn btn-ghost normal-case text-lg">IvenAsk!</a>
+        <a
+          href="/"
+          class="btn btn-ghost normal-case text-[50px] text-white font-semibold"
+          >mPower!</a
+        >
       </div>
       <div class="navbar-end flex gap-2">
         <% if(user) {%>
@@ -104,7 +110,7 @@
           </label>
           <ul
             tabindex="0"
-            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow-xl bg-[#115e59] rounded-box w-52"
           >
             <li>
               <a class="" href="/profile"
@@ -126,10 +132,14 @@
         </div>
         <%} else if(!title) {%>
         <a href="/login">
-          <button class="btn btn-outline btn-info btn-xs">LOGIN</button>
+          <button class="btn btn-outline btn-slate-900 text-white">
+            LOGIN
+          </button>
         </a>
         <a href="/signup">
-          <button class="btn btn-outline btn-success btn-xs">SIGNUP</button>
+          <button class="btn btn-outline btn-slate-900 text-white">
+            SIGNUP
+          </button>
         </a>
         <%} %>
       </div>

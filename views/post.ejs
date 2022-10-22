@@ -48,7 +48,7 @@
           >
             <button class="btn btn-ghost fa fa-heart" type="submit"></button>
           </form>
-          <h5><%= post.likes %></h5>
+          <h5>0</h5>
         </div>
         <div class="flex items-center">
           <form
@@ -58,7 +58,7 @@
           >
             <button class="btn btn-ghost fa fa-comment" type="submit"></button>
           </form>
-          <h5><%= post.likes %></h5>
+          <h5>2</h5>
         </div>
         <div class="flex gap-2 items-center">
           <form
@@ -66,7 +66,9 @@
             action="/post/likePost/<%= post.id %>?_method=PUT"
             method="POST"
           >
-            <button class="btn btn-ghost fa fa-share" type="submit"></button>
+            <button class="btn btn-ghost fa fa-share" type="submit">
+              Share
+            </button>
           </form>
         </div>
       </div>

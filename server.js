@@ -11,6 +11,8 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comments");
+const apiRoutes = require("./routes/api");
+const apisRoutes = require("./routes/getApi");
 
 const PORT = process.env.PORT || 8181;
 //Use .env file in config folder
@@ -59,6 +61,8 @@ app.use(flash());
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
+app.use("/api", apiRoutes);
+app.use("/apis", apisRoutes);
 
 //Server Running
 app.listen(PORT, () => {
